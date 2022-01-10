@@ -17,14 +17,14 @@ namespace MinuVorm
         public PictureBox img = new PictureBox();
         private Control image;
 
-        public Button but = new Button();
+        public Button but;
         private Control button;
 
 
         public KinoForm()
         {
             this.ClientSize = new System.Drawing.Size(1000, 600);
-            //BackColor = Color.Black;
+            BackColor = Color.LightGray;
 
 
 
@@ -42,41 +42,22 @@ namespace MinuVorm
             box.BorderStyle = 0;                             // уберает чёрные рамки
 
             this.Controls.Add(box);
+            but = new Button();
+            but.BackColor = Color.Yellow;
+            but.Text = "Tagasi";
+            but.Size = new Size(100, 70);
+            but.ForeColor = Color.Green;
+            but.Location = new Point(100, 300);
+            but.Font = new Font("Times New Roman", 18);
+            but.Click += new EventHandler(but_Click);
+            this.Controls.Add(but);
+
             //////////////////////////////////////////////////////////////////////////// 
             img.Size = new Size(1000, 600);
             //img.Image = Image.FromFile(@"..\..\img\kinoshka2.jpg");
             this.Controls.Add(img);
             /////////////////////////////////////////////////////////////////////////////////////
-            ///
-
-
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            but.Text = "Tagasi";
-            but.Size = new Size(70, 70);
-            but.Location = new Point(700, 500);
-            but.Font = new Font("Times New Roman", 35);
-
-            but.Click += new EventHandler(but_Click);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
-            this.Controls.Add(but);
+            //
         }
 
         private void but_Click(object sender, EventArgs e)
